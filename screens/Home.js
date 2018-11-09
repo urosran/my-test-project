@@ -1,13 +1,16 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
+import styles from '../styles';
 
 
-export default ({ navigation }) => (
-  <View >
-    <Text>Home Screen</Text>
-    <Button
-      title="Settings"
-      onPress={() => navigation.navigate('Settings')}
-    />
+const Home = ({ navigation }) => (
+  <View style={styles.container} >
+    <Text style={styles.container}>Home Content</Text>
   </View>
 );
+
+Home.navigationOptions = {
+  title: 'Za Sasku'
+};
+
+export default Home;

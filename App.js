@@ -1,21 +1,39 @@
+import React, { Component } from 'react';
 import { createStackNavigator } from 'react-navigation';
-import Home from './screens/Home.js';
-import Settings from './screens/Settings.js';
+import Home from './screens/Home';
+import Details from './screens/Details';
 
-export default createStackNavigator(
+const Nav = createStackNavigator(
   {
     Home,
-    Settings
+    Details
   },
   { initialRouteName: 'Home' }
 );
 
+export default class App extends Component {
+  state = {
+    stock: {
+      first: 1,
+      second: 0,
+      third: 200
+    }
+  };
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+  updateStock = id => {
+    this.setState(({ stock }) => ({stock: {
+      ...stock,
+      [id]: stock[id] === 0 ? 0 : stock[id] - 1
+    }
+  }));
+};
+
+render() {
+  const props = {
+    ...this.state,
+    updateStock: this.updateStock
+  };
+
+  return <Nav screenProps={props} />;
+}
+}
