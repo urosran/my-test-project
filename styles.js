@@ -10,6 +10,11 @@ export default StyleSheet.create({
   }, 
   button: {
     marginRight: 100,
-  }
+  },
+  mapView: {
+    alignSelf: 'stretch',
+    height: 250,
+    margin: 0,
+  },
 
 });
