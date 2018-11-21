@@ -1,19 +1,21 @@
 import * as React from 'react';
-import { View, Text, StyleSheet  } from 'react-native';
-import { Button, Card, Title, Paragraph, TextInput, Appbar } from 'react-native-paper';
-import styles from '../styles';
+import { View, 
+        Text, 
+        StyleSheet, 
+        ScrollView, 
+        TouchableOpacity  } from 'react-native';
+import { Button,
+         Appbar } from 'react-native-paper';
 
-// export default ({ navigation }) => (
-//   <View style={styles.container}>
-//     <Text>Home Screen</Text>
-//     <Button
-//       title="Map"
-//       onPress={() => navigation.navigate('Map')}
-//     />
-//   </View>
-// );
+import styles from '../styles';
+import Input from "./Input"
+
+
 state = {
-    text: []
+    person:{
+        name: "",
+        surname: ""
+    }
   };
 
 const Home = ({ navigation }) => (
@@ -25,39 +27,47 @@ const Home = ({ navigation }) => (
             {/* <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
             <Appbar.Action icon="delete" onPress={() => console.log('Pressed delete')} /> */}
          </Appbar>
-        <Card>
-            <Card.Content>
-                <Title>Add a friend</Title>
-                <TextInput
-                    label='Name'
-                    value={this.state.text}
-                    onChangeText={text => this.setState({ text })}
-                />
-                <TextInput
-                    label='Surname'
-                    value={this.state.text}
-                    onChangeText={text => this.setState({ text })}
-                />
-                <Paragraph>Current location: beograd</Paragraph>
+            <Input/>
+
+        <ScrollView>
+
+            <Text>URos1</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+            <Text>URos</Text>
+        </ScrollView>
+     
+     </View>    
+    )
 
 
-                {/* <Paragraph>Card content</Paragraph> */}
-            </Card.Content>
-            
-            {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> */}
-            
-            <Card.Actions>
-                <Button>Ok</Button>
-                <Button>Cancel</Button>
-            </Card.Actions>
-        </Card>
-       
-
-     </View>
-  );
-  
-
-Home.navigationOptions = ({ navigation }) => ({
+   Home.navigationOptions = ({ navigation }) => ({
     title: "NameGuru",
     headerRight: (
       <Button
@@ -76,6 +86,11 @@ Home.navigationOptions = ({ navigation }) => ({
         justifyContent: "space-around"
 
     },
+    scroll: {
+        marginTop:0,
+        display:"flex",
+        
+    }
   });
 
   export default Home;

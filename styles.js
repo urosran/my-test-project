@@ -16,5 +16,14 @@ export default StyleSheet.create({
     height: 250,
     margin: 0,
   },
+ 
 
+  label: {
+    textAlign: 'center',
+    margin: 10,
+  },
+
+  address: {
+    fontWeight: 'bold',
+  },
 });
